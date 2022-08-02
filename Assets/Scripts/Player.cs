@@ -65,11 +65,11 @@ public class Player : MonoBehaviour
 
     //collected items stuff
     // first stage collectable
-    internal static int firstCollectable = 0;
+    public static int firstCollectable = 0;
     //third stage collectable
-    internal static int finalCollectable = 0;
+    public static int finalCollectable = 0;
     // second stage score (shoot in order) 
-    internal static int mazeScore = 0;
+    public static int mazeScore = 0;
 
     //layers
     public LayerMask firstCollectableMask;
@@ -214,8 +214,17 @@ public class Player : MonoBehaviour
             {
                 if (interact)
                 {
-                    hitInfo.transform.GetComponent<>().Collected();
+                    hitInfo.transform.GetComponent<firstdrop>().Collected();
                 }
+
+                else if (hitInfo.Info.transform.tag == "DepositA")
+                {
+                    if (interact)
+                    {
+                        hitInfo.transform.GetComponent<DepositA>().Interact();
+                    }
+                }
+                // need to do 1 loop for each collectable and deposit
             }
         }
     }
@@ -270,7 +279,7 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "")
         {
-
+            finish this part
         }
     }
     void OnLook(InputValue value)
