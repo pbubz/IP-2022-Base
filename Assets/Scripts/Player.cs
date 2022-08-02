@@ -217,7 +217,7 @@ public class Player : MonoBehaviour
                     hitInfo.transform.GetComponent<firstdrop>().Collected();
                 }
 
-                else if (hitInfo.Info.transform.tag == "DepositA")
+                else if (hitInfo.transform.tag == "DepositA")
                 {
                     if (interact)
                     {
@@ -279,7 +279,7 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "")
         {
-            finish this part
+            //finish this part
         }
     }
     void OnLook(InputValue value)
